@@ -90,6 +90,7 @@ class Graster
   class GcodeFile < File
     def preamble opts
       @laser = false
+      self << "G20\n"
       self << "M63 P0\nG61\nF#{opts[:feed] || 60}\n"
       self << "M101\n" if opts[:mask]
       self << "M3 S1\n"
