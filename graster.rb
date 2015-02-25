@@ -162,6 +162,10 @@ class Graster
       self << "1 0 0 0\n"
     end
 
+    def postamble
+      self << "0 0 0 0\n"
+    end
+
     def begin_row forward
       @begin_row = true
     end
@@ -365,6 +369,10 @@ class Graster
     end # @config[:repeat][i].times
 
     gcode.epilogue
+
+    for postambles in 0..512
+      gmask.postamble
+    end
   end # def render_tiled_image
 
   # cut out the tile with bottom left at x,y
