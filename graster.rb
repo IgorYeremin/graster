@@ -1,4 +1,7 @@
-#!/usr/bin/ruby
+#!/usr/bin/env ruby1.9.1
+
+$:.push "/usr/local/lib"
+$:.push "/usr/local/rvm/gems/ruby-1.9.1-p378/lib"
 
 require 'yaml'
 require 'RMagick'

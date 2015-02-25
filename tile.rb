@@ -1,4 +1,4 @@
-#!/usr/bin/ruby
+#!/usr/bin/ruby1.9.1
 
 unless ARGV.size == 5
   puts "usage: ruby tile.rb <input-gcode-file> <tile-width> <tile-height> <horiz-count> <vert-count>"
