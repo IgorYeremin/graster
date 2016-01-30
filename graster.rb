@@ -92,7 +92,7 @@ class Graster
       @laser = false
       self << "G20\n"
       self << "M63 P0\nG61\nF#{opts[:feed] || 60}\n"
-      self << "M101\n" if opts[:mask]
+      self << "M102\n" if opts[:mask]
       self << "M3 S1\n"
     end
 
@@ -213,7 +213,7 @@ class Graster
     :overshoot => 0.5,                 # Distance the X axis should travel past the outer boundaries of the outer images.
                                        # This needs to be wide enough so that the X axis doesn't start decelerating
                                        # until after it has cleared the image.
-    :offset => [1.0,1.0],              # X,Y location for the bottom left corner of the bottom left tile.
+    :offset => [0.0,0.0],              # X,Y location for the bottom left corner of the bottom left tile.
                                        # The X component of this setting must be equal to or greater than :overshoot.
     :repeat => [1,1],                  # Number of times to repeat the image in the X and Y axes, respectively.
     :tile_size => [false,false],       # Size of the tile(s) inches. Any nil value is calculated from
